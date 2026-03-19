@@ -70,6 +70,7 @@ function init() {
  * collisions with the walls.
  */
 function update() {
+  // console.log("updating...");
   // TODO 6, Part 2: Fill in the update function's code block
 
   if (started) {
@@ -104,7 +105,7 @@ function checkForNewDirection(event) {
   }
   // FILL IN THE REST
 
-  // console.log(snake.head.direction);     // uncomment me!
+   console.log(snake.head.direction);     // uncomment me!
 }
 
 function moveSnake() {
@@ -131,15 +132,17 @@ function moveSnake() {
   snake.head.column = snake.head.column - 1;
 }
 else if (snake.head.direction === "right") {
-  snake.head.column.direction = snake.head.column + 1;
+  snake.head.column = snake.head.column + 1;
 }
 else if (snake.head.direction === "up") {
-  snake.head.row.direction = snake.head.row - 1;
+  snake.head.row = snake.head.row - 1;
 }
 else if (snake.head.direction === "down") {
-  snake.head.row.direction = snake.head.row + 1;
+  snake.head.row = snake.head.row + 1;
 }
 }
+
+repositionSquare(snake.head)
 
 // TODO 9: Create a new helper function
 
