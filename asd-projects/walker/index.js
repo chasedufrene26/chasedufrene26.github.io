@@ -19,12 +19,12 @@ function runProgram(){
 };
 
   // Game Item Objects
-var walker = [{
-  x: 0,
+var walker = {
+  x: 10,
   y: 0,
-  speedX: 0,
+  speedX: 03,
   speedY: 0,
-}];
+};
 
   // one-time setup
   var interval = setInterval(newFrame, FRAMES_PER_SECOND_INTERVAL);   // execute newFrame every 0.0166 seconds (60 Frames per second)
@@ -48,8 +48,8 @@ var walker = [{
   by calling this function and executing the code inside.
   */
   function newFrame() {
-    
-
+    repositionGameItem();
+    redrawGameItem();
   }
   
   /* 
@@ -61,15 +61,19 @@ var walker = [{
   function handleKeyDown(event) { 
     if (event.which === KEY.LEFT) {
   console.log("left pressed");
+  // walker.speedX = -5;
 }
 if (event.which === KEY.RIGHT) {
   console.log("right pressed");
+  //walker.speedX = 5;
 }
 if (event.which === KEY.UP) {
   console.log("up pressed");
+  //walker.speedY = -5;
 }
 if (event.which === KEY.DOWN) {
   console.log("down pressed");
+  //walker.speedY = 5;
 }
   }
 
@@ -87,5 +91,14 @@ if (event.which === KEY.DOWN) {
   }
   function repositionGameItem() {
     // Implementation for repositioning the game item
+    walker.x += walker.speedX;
+    walker.y += walker.speedY;
+  }
+
+  function redrawGameItem() {
+    // Implementation for redrawing the game item
+    $('#walker').css("left", walker.x)
+                .css("top", walker.y);
+    console.log("Walker position:" + walker.x + ", " + walker.y);
   }
 }
