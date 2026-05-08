@@ -1,21 +1,61 @@
-
 body {
   background-color: darkgreen;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
 #board {
   width: 440px;
   height: 440px;
-  border: 1px solid white;
+  border: 2px solid white;
   background-color: black;
   position: relative;
 }
 
-#gameItem {
-  background-color: teal;
-  width: 50px;
-  height: 50px;
+.paddle {
+  width: 15px;
+  height: 100px;
+  background-color: white;
   position: absolute;
-/*   left: 100px; */  /* Uncomment if you want to set a "starting" position */
-/*   top: 100px;  */  /* Uncomment if you want to set a "starting" position */
+  top: 170px;
+}
+
+#leftPaddle {
+  left: 20px;
+}
+
+#rightPaddle {
+  right: 20px;
+}
+
+#ball {
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 210px;
+  left: 210px;
+}
+
+.score {
+  position: absolute;
+  color: white;
+  font-size: 24px;
+  font-family: Arial, sans-serif;
+  width: 60px;
+  text-align: center;
+}
+
+#score1 {
+  top: 10px;
+  left: 20px;
+}
+
+#score2 {
+  top: 10px;
+  right: 20px;
 }
