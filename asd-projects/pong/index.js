@@ -137,8 +137,8 @@ function runProgram(){
       // Ball scored on the right
       if (gameItem.id === "#ball") {
         score2++;
-        $("#score2").text(score2);
-        if (score2 >= 4) {
+        $("#score2").text("Player 2: " + score2);
+        if (score2 >= 11) {
           endGame();
         }
         startBall();
@@ -161,8 +161,8 @@ function runProgram(){
       // Ball scored on the left
       if (gameItem.id === "#ball") {
         score1++;
-        $("#score1").text(score1);
-        if (score1 >= 4) {
+        $("#score1").text("Player 1: " + score1);
+        if (score1 >= 11) {
           endGame();
         }
         startBall();
@@ -213,6 +213,13 @@ function runProgram(){
 
     // turn off event handlers
     $(document).off();
+
+    // show a message that the game is over
+    if (score1 >= 11) {
+      alert("Player 1 Wins!");
+    } else {
+      alert("Player 2 Wins!");
+    }
   }
   
 }
